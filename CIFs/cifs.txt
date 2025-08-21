@@ -1,0 +1,2 @@
+Put your cif files in this directory and remove this .txt
+

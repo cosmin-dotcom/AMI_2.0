@@ -1,0 +1,6 @@
+index,value,VF,vSA,gSA,PLD,LCD,DR,log_Kxe,log_Kkr,K_selec
+
+If you have prior data from a random ami sample of N, it will output lines like this. Place your prior data here, else
+comment out the PRIOR.csv initialisation from main.py
+
+5561,1.76234835,0.54,1305.01,807.638,5.39006,6.29398,1.1677012871841872,-6.657121082,-9.957348351,4.686521629782477
