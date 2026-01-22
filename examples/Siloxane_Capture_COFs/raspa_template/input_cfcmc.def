@@ -1,0 +1,27 @@
+SimulationType                MonteCarlo
+NumberOfCycles                600000
+NumberOfInitializationCycles  600000
+PrintEvery                    15000
+PrintPropertiesEvery          15000
+Forcefield                    local
+ChargeMethod                  none
+CutOffVDW                     {cutoff:.2f}
+RestartFile                   no
+
+Framework 0 
+            FrameworkName                 simulation
+            UnitCells                     {na:d} {nb:d} {nc:d}
+            RemoveAtomNumberCodeFromLabel yes
+	    ExternalTemperature           298
+            ExternalPressure              10 
+            Movies                        no
+            WriteMoviesEvery              9000
+
+Component 0 MoleculeName                  D4
+            MoleculeDefinition            local
+            TranslationProbability        0.5
+            RotationProbability           0.5
+            ReinsertionProbability        0.5
+            CFSwapLambdaProbability       1.0
+	    CreateNumberOfMolecules       0
+

@@ -1,0 +1,26 @@
+SimulationType                MonteCarlo
+NumberOfCycles                50000
+NumberOfInitializationCycles  0
+PrintEvery                    5000
+PrintPropertiesEvery          5000
+Forcefield                    local
+ChargeMethod                  Ewald
+EwaldPrecision                1e-6
+CutOffVDW                     {cutoff:.2f}
+RestartFile                   no
+
+Framework 0 
+            FrameworkName                 simulation
+            UnitCells                     {na:d} {nb:d} {nc:d}
+            RemoveAtomNumberCodeFromLabel yes
+            UseChargesFromCifFile         yes
+            ExternalTemperature           298
+            ExternalPressure              10 
+            Movies                        no
+            WriteMoviesEvery              9000
+
+Component 0 MoleculeName                  Tip5p
+            MoleculeDefinition            local
+            IdealRosenbluthValue          1.0
+            WidomProbability              1.0
+            CreateNumberOfMolecules       0

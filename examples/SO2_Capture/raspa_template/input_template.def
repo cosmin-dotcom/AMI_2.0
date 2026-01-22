@@ -1,0 +1,46 @@
+SimulationType                MonteCarlo
+NumberOfCycles                1
+NumberOfInitializationCycles  1
+PrintEvery                    1000
+PrintPropertiesEvery          1000
+Forcefield                    local
+ChargeMethod                  Ewald
+EwaldPrecision                1e-6
+Restart File                  no
+CutOff                        {cutoff:.2f}
+
+Framework 0 
+            FrameworkName                 simulation
+            RemoveAtomNumberCodeFromLabel no
+            UseChargesFromCIFFile            yes
+            UnitCells                     {na:d} {nb:d} {nc:d}
+            ExternalTemperature           313.0
+            ExternalPressure              1e4 1e5
+	    Movies                        No
+	
+Component 0 MoleculeName                  CO2
+            MoleculeDefinition            local
+            TranslationProbability        0.5
+            RotationProbability           0.5
+            ReinsertionProbability        0.5
+            SwapProbability               1.0
+	    CreateNumberOfMolecules       0
+            MolFraction                   0.198
+         
+Component 1 MoleculeName                  SO2
+            MoleculeDefinition            local
+            TranslationProbability        0.5
+            RotationProbability           0.5
+            ReinsertionProbability        0.5
+            SwapProbability               1.0
+	    CreateNumberOfMolecules       0
+            MolFraction                   0.002
+         
+Component 2 MoleculeName                  N2
+            MoleculeDefinition            local
+            TranslationProbability        0.5
+            RotationProbability           0.5
+            ReinsertionProbability        0.5
+            SwapProbability               1.0
+	    CreateNumberOfMolecules       0
+            MolFraction                   0.8

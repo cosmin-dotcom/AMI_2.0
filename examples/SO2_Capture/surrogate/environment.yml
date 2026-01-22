@@ -1,0 +1,17 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - numpy
+  - h5py
+  - scipy
+  - scikit-learn
+  - pytest
+  - raspa2
+  - pandas
+  - pip
+  - pip:
+    - gpflow
+    - ase
+

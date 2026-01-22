@@ -1,0 +1,50 @@
+# critical constants: Temperature [T], Pressure [Pa], and Acentric factor [-]
+585.7
+1339590
+0.592
+#Number Of Atoms
+16
+# Number of groups
+1 
+# D4-group
+Rigid
+# number of atoms
+16
+# atomic positions
+0 CH3_D4   4.3198  -0.2718    1.3971 
+1 CH3_D4   3.9847  -1.7562   -1.3286
+2 Si_D4    3.1365  -0.7701    0.0267 
+3 O_D4     1.9213  -1.6816    0.7475
+4 CH3_D4   1.6735   3.2187   -1.5120
+5 CH3_D4   1.4331   2.2420    1.4613
+6 Si_D4    1.3378   1.7784   -0.3619
+7 O_D4	   2.4782   0.5925   -0.7067
+8 CH3_D4  -2.2590   1.2815    1.3636
+9 CH3_D4  -2.6052  -0.1997   -1.3611
+10 Si_D4  -1.4157   0.2953    0.0056
+11 O_D4   -0.2012   1.2041   -0.7199
+12 CH3_D4  0.2869  -2.6955   -1.4467
+13 CH3_D4  0.0459  -3.7042    1.5158
+14 Si_D4   0.3828  -2.2517    0.3814
+15 O_D4   -0.7576  -1.0687    0.7370
+# Chiral centers Bond  BondDipoles Bend  UrayBradley InvBend  Torsion Imp. Torsion Bond/Bond Stretch/Bend Bend/Bend Stretch/Torsion Bend/Torsion IntraVDW IntraCoulomb
+              0   16             0    0            0       0        0            0         0            0         0               0            0        0            0
+# Bond stretch: atom n1-n2, type, parameters
+0 2 RIGID_BOND
+1 2 RIGID_BOND
+2 3 RIGID_BOND
+3 6 RIGID_BOND
+4 6 RIGID_BOND
+5 6 RIGID_BOND
+6 7 RIGID_BOND
+7 10 RIGID_BOND
+8 10 RIGID_BOND
+9 10 RIGID_BOND
+10 11 RIGID_BOND
+11 14 RIGID_BOND
+12 14 RIGID_BOND
+13 14 RIGID_BOND
+14 15 RIGID_BOND
+2 15 RIGID_BOND
+# Number of config moves
+0

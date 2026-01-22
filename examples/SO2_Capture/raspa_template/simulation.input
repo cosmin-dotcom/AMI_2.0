@@ -1,0 +1,37 @@
+SimulationType                MonteCarlo
+NumberOfCycles                500
+NumberOfInitializationCycles  0
+PrintEvery                    10
+PrintPropertiesEvery          10
+Forcefield                    local
+ChargeMethod                  Ewald
+EwaldPrecision                1e-6
+Restart File                  no
+CutOff                        12
+
+Framework 0 
+            FrameworkName                 DB0-m15_o100_o151_f0_fsc_repeat
+            RemoveAtomNumberCodeFromLabel no
+            UseChargesFromCifFile         yes 
+            UnitCells                     2 2 4
+            ExternalTemperature           313
+	    Movies                        No
+
+Component 0 MoleculeName                  CO2
+            MoleculeDefinition            local
+            IdealRosenbluthValue          1.0
+            WidomProbability              1.0
+            CreateNumberOfMolecules       0
+
+Component 1 MoleculeName                  SO2
+            MoleculeDefinition            local
+            IdealRosenbluthValue          1.0
+            WidomProbability              1.0
+            CreateNumberOfMolecules       0
+
+Component 2 MoleculeName                  N2
+            MoleculeDefinition            local
+            IdealRosenbluthValue          1.0
+            WidomProbability              1.0
+            CreateNumberOfMolecules       0
+
