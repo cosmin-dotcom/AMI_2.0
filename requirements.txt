@@ -1,0 +1,4 @@
+numpy~=1.24
+ase~=3.22
+raspa2~=2.0
+setuptools~=66.1
