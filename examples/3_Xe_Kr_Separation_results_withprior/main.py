@@ -129,7 +129,7 @@ if prior_true == 1:
             config.data.state.select(x_)
 
             # Then set the result
-            result = config.data.set_prior_result(x_, Some(y_))
+            result = config.data.set_result(x_, Some(y_))
             #print(f"Set result for index {x_}")
 
         except Exception as e:

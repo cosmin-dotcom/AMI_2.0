@@ -1,0 +1,11 @@
+{
+  "CriticalTemperature": 132.9,
+  "CriticalPressure": 3500000.0,
+  "AcentricFactor": 0.066,
+  "Type": "rigid",
+  "pseudoAtoms": [
+    ["C_co", [0.0, 0.0, 0.6443]],
+    ["CO_com", [0.0, 0.0, 0.0]],
+    ["O_co", [0.0, 0.0, 1.128]]
+  ]
+}   

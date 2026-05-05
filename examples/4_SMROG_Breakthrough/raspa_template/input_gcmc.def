@@ -1,0 +1,29 @@
+SimulationType                MonteCarlo
+NumberOfCycles                10000
+NumberOfInitializationCycles  10000
+PrintEvery                    100
+PrintPropertiesEvery          100
+Forcefield                    local
+ChargeMethod                  Ewald
+EwaldPrecision                1e-6
+Restart File                  no
+CutOff                        {cutoff:.2f}
+
+Framework 0 
+            FrameworkName                 simulation
+            RemoveAtomNumberCodeFromLabel no
+            UseChargesFromCIFFile         yes
+            UnitCells                     {na:d} {nb:d} {nc:d}
+            ExternalTemperature           298.0
+            ExternalPressure              {pressure_range}
+	    Movies                        No
+	
+Component 0 MoleculeName                  {component}
+            MoleculeDefinition            local
+            TranslationProbability        0.5
+            RotationProbability           0.5
+            ReinsertionProbability        0.5
+            SwapProbability               1.0
+	    CreateNumberOfMolecules       0
+            MolFraction                   1
+         
