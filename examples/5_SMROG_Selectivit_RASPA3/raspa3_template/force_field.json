@@ -1032,7 +1032,7 @@
       "element" : "O",
       "print_as" : "O",
       "mass" : 15.9994,
-      "charge" : 0.0,
+      "charge" : -0.112,
       "source" : "A. Martin-Calvo et al. , Phys. Chem. Chem. Phys. 2011, 13, 11165-11174"
     },
     {
@@ -1042,7 +1042,7 @@
       "element" : "O",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : 0.224,
       "source" : "A. Martin-Calvo et al. , Phys. Chem. Chem. Phys. 2011, 13, 11165-11174"
     },
     {
@@ -1062,7 +1062,7 @@
       "element" : "H",
       "print_as" : "H",
       "mass" : 1.00794,
-      "charge" : 0.0,
+      "charge" : 0.468,
       "source" : "Q. Yang., and C. Zhong, J. Phys. Chem. B 2005, 109, 24, 11862–11864"
     },
     {
@@ -1072,7 +1072,7 @@
       "element" : "H",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : -0.936,
       "source" : ""
     },
     {
@@ -1082,7 +1082,7 @@
       "element" : "C",
       "print_as" : "C",
       "mass" : 12.0,
-      "charge" : 0.0,
+      "charge" : -0.2424,
       "source" : "A. Martin-Calvo et al. , J. Phys. Chem. C. 2012, 116, 6655"
     },
     {
@@ -1092,7 +1092,7 @@
       "element" : "C",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : 0.5168,
       "source" : "A. Martin-Calvo et al. , J. Phys. Chem. C. 2012, 116, 6655"
     },
     {
@@ -1102,7 +1102,7 @@
       "element" : "O",
       "print_as" : "O",
       "mass" : 15.9994,
-      "charge" : 0.0,
+      "charge" : -0.2744,
       "source" : "A. Martin-Calvo et al. , J. Phys. Chem. C. 2012, 116, 6655"
     },
     {
@@ -1122,7 +1122,7 @@
       "element" : "O",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : -0.241,
       "source" : "S.W. Rick, J. Chem. Phys. 2004, 120 (13), 6085-6093"
     },
     {
@@ -1132,7 +1132,7 @@
       "element" : "H",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : 0.241,
       "source" : "S.W. Rick, J. Chem. Phys. 2004, 120 (13), 6085-6093"
     },
     {
@@ -1152,7 +1152,7 @@
       "element" : "O",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : -1.04844,
       "source" : "Hans W. Horn, W. C. Swope, J. Chem. Phys.(2004)"
     },
     {
@@ -1162,7 +1162,7 @@
       "element" : "H",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : 0.5242,
       "source" : "Hans W. Horn, W. C. Swope, J. Chem. Phys.(2004)"
     },
     {
@@ -1182,7 +1182,7 @@
       "element" : "O",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : -1.040,
       "source" : "Jorgensen, et al. J. Chem. Phys, (1983)"
     },
     {
@@ -1192,7 +1192,7 @@
       "element" : "H",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : 0.520,
       "source" : "Jorgensen, et al. J. Chem. Phys, (1983)"
     },
     {
@@ -1212,7 +1212,7 @@
       "element" : "O",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : -0.241,
       "source" : "Mahoney, M. W., & Jorgensen, W. L., J. Chem. Phys (2000)"
     },
     {
@@ -1222,7 +1222,7 @@
       "element" : "H",
       "print_as" : "-",
       "mass" : 0.0,
-      "charge" : 0.0,
+      "charge" : 0.241,
       "source" : "Mahoney, M. W., & Jorgensen, W. L., J. Chem. Phys (2000)"
     },
     {
@@ -1232,7 +1232,7 @@
       "element" : "S",
       "print_as" : "S",
       "mass" : 32.065,
-      "charge" : 0.0,
+      "charge" : 0.59,
       "source" : "J. Phys. Chem. B 2011, 115, 17, 4949–4954"
     },
     {
@@ -1242,7 +1242,7 @@
       "element" : "O",
       "print_as" : "O",
       "mass" : 15.9994,
-      "charge" : 0.0,
+      "charge" : -0.295,
       "source" : "J. Phys. Chem. B 2011, 115, 17, 4949–4954"
     }
   ],
