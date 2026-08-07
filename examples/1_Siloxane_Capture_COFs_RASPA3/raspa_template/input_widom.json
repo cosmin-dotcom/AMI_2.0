@@ -1,0 +1,27 @@
+{
+  "SimulationType" : "MonteCarlo",
+  "NumberOfCycles" : 50000,
+  "NumberOfInitializationCycles" : 0,
+  "PrintEvery" : 5000,
+
+  "ForceField" : ".",
+  
+  "Systems" : [
+    {
+      "Type" : "Framework",
+      "Name" : "simulation",
+      "NumberOfUnitCells" : [1234, 1234, 1234],
+      "ExternalTemperature" : 298.0,
+      "ChargeMethod" : "Ewald",  
+      "UseChargesFrom": "CIF_File"
+    }
+  ],
+
+  "Components" : [ 
+    {
+      "Name" : "Tip5p",
+      "WidomProbability" : 1.0,
+      "CreateNumberOfMolecules" : 0
+    }
+  ]
+}
