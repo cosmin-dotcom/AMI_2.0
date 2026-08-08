@@ -1,0 +1,33 @@
+{
+  "SimulationType" : "MonteCarlo",
+  "NumberOfCycles" : 600000,
+  "NumberOfInitializationCycles" : 600000,
+  "PrintEvery" : 15000,
+
+  "ForceField" : "force_field_no_charge.json",
+  
+  "Systems" : [
+    {
+      "Type" : "Framework",
+      "Name" : "simulation",
+      "NumberOfUnitCells" : [1234, 1234, 1234],
+      "ExternalTemperature" : 298.0,
+      "ExternalPressure" : 10,
+      "ChargeMethod" : "None",  
+      "UseChargesFrom": "CIF_File"
+    }
+  ],
+
+  "Components" : [ 
+    {
+      "Name" : "D4",
+      "FugacityCoefficient" : 1.0,
+      "ThermodynamicIntegration" : true,
+      "TranslationProbability" : 0.5,
+      "RotationProbability" : 0.5,
+      "ReinsertionProbability" : 0.5,
+      "CFCMC_CBMC_SwapProbability" : 1.0,
+      "CreateNumberOfMolecules" : 0
+    }
+  ]
+}

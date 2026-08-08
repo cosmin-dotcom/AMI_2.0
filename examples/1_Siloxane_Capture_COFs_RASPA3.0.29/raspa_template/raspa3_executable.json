@@ -1,0 +1,2 @@
+#!/bin/sh -f
+~/miniforge3/envs/ami_gpflow/bin/raspa3

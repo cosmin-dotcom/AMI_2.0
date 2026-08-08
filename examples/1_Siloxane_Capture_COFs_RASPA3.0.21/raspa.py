@@ -5,11 +5,11 @@ from subprocess import run
 from typing import Union
 
 import os
+import shutil
 import re
 import numpy as np
 from ase.io import read
 import json 
-import raspalib # Needed to run MC with python input
 
 import ami.abc
 from ami.abc import SchemaInterface
@@ -38,7 +38,10 @@ class Adsorption(ami.abc.CalculatorInterface):
     workdir: Path
     D4: str
     Tip5p: str
+    raspa3_executable: str
     force_field: str
+    input_cfcmc: str
+    input_widom: str
 
     @classmethod
     def from_template_folder(cls, workdir: Union[str, Path], path: Union[str, Path]):
@@ -90,59 +93,23 @@ class Adsorption(ami.abc.CalculatorInterface):
                 (w / f"force_field.json").write_text(modified_json)
 
         #Write the CIF for the COF we are using
-        (w / "MOF.cif").write_bytes(cif_bytes)
+        (w / "COF.cif").write_bytes(cif_bytes)
         
         # Remove existing data if relevant
         for out_path in w.glob("Output/System_0/*.data"):
             out_path.unlink()
        
-    def run_widom(self, cif_bytes: bytes):                                   
-        ff = raspalib.ForceField("force_field.json")
-
-        mcmoves = raspalib.MCMoveProbabilities(widomProbability=1.0)
-
-        # define particles
-        Tip5p = raspalib.Component(
-            componentId=0,
-            forceField=ff,
-            componentName="Tip5p",
-            fileName="Tip5p.json",
-            particleProbabilities=mcmoves
-        )
+    def run_external(self, subdir: str):
+        print("Running Widom")                                   
         
-        atoms = read(BytesIO(cif_bytes), format="cif")
-        cell = np.array(atoms.cell)
-        cutoff = 13.0
-        na, nb, nc = find_minimum_image(cell, cutoff)
+        run(["chmod","+x","raspa3_executable.json"], cwd=self.workdir/subdir) # make sure we can run it
+        shutil.copy('./input_widom.json', './simulation.json')                # make simulation input have correct name
         
-        MOF = raspalib.Framework(
-            frameworkId=0,
-            forceField=ff,
-            componentName="MOF",
-            fileName="MOF.cif",
-            numberOfUnitCells=raspalib.int3(na, nb, nc)
-        )
-
-        system0 = raspalib.System(
-            systemId=0,
-            externalTemperature=298.0,
-            forceField=ff,
-            components=[Tip5p],
-            initialNumberOfMolecules=[0],
-            frameworkComponents=MOF
-        )
-
-        widom = raspalib.MonteCarlo(
-            numberOfCycles=50000,
-            numberOfInitializationCycles=0,
-            systems=[system0],
-            outputToFiles=True
-        )
-
-        widom.run() 
+        run(["./raspa3_executable.json"], cwd=self.workdir/subdir)            # RUN WIDOM
         print("WIDOM SUCCESS")
         
-    def run_cfcmc(self, cif_bytes: bytes):                                   
+        print("Running CFCMC")
+        
         # Read original
         with open("force_field.json") as f:
             data = json.load(f)
@@ -153,56 +120,9 @@ class Adsorption(ami.abc.CalculatorInterface):
         # Write temp file
         with open("force_field_no_charge.json", "w") as f:
             json.dump(data, f)
-
-        # Load
-        ff = raspalib.ForceField("force_field_no_charge.json")
-
-        cfcmcmoves = raspalib.MCMoveProbabilities(translationProbability=0.5,
-                                                  rotationProbability=0.5,
-                                                  reinsertionCBMCProbability=0.5,
-                                                  swapCBCFCMCProbability=1.0
-                                                  )
-
-        D4 = raspalib.Component(
-            componentId=0,
-            forceField=ff,
-            componentName="D4",
-            fileName="D4.json",
-            particleProbabilities=cfcmcmoves
-        )
-        
-        atoms = read(BytesIO(cif_bytes), format="cif")
-        cell = np.array(atoms.cell)
-        cutoff = 13.0
-        na, nb, nc = find_minimum_image(cell, cutoff)
-        
-        MOF = raspalib.Framework(
-            frameworkId=0,
-            forceField=ff,
-            componentName="MOF",
-            fileName="MOF.cif",
-            numberOfUnitCells=raspalib.int3(na, nb, nc)
-        )
-
-        system = raspalib.System(
-            systemId=0,
-            externalTemperature=298.0,
-            externalPressure=10,
-            forceField=ff,
-            components=[D4],
-            initialNumberOfMolecules=[0],
-            frameworkComponents=MOF
-        )
-
-        cfcmc = raspalib.MonteCarlo(
-            numberOfCycles=600000,
-            numberOfInitializationCycles=600000,
-            printEvery=15000,
-            systems=[system],
-            outputToFiles=True
-        )
-        
-        cfcmc.run()
+            
+        shutil.copy('./input_cfcmc.json', './simulation.json')                # make cfcmc input have correct name
+        run(["./raspa3_executable.json"], cwd=self.workdir/subdir)
         print("CFCMC SUCCESS")
  
     def parse_output(self, subdir: str):
@@ -258,12 +178,8 @@ class Adsorption(ami.abc.CalculatorInterface):
         cif_bytes = re.sub(rb"_atom_site_label", rb"_atom_site.id", cif_bytes)
         self.write(cif_bytes, subdir=subdir)
 
-
-        orig_cwd = os.getcwd()
-        os.chdir(self.workdir/subdir)
-        self.run_widom(cif_bytes=cif_bytes)
-        self.run_cfcmc(cif_bytes=cif_bytes)
-        os.chdir(orig_cwd)   
+        self.run_external(subdir=subdir)
+        
         ads_loading, ads_enthalpy, ads_henry = self.parse_output(subdir=subdir)
         
         target = np.log(1/ads_henry["Tip5p"]) + np.log(ads_loading["D4"])
