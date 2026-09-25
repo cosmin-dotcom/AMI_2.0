@@ -1,0 +1,89 @@
+# critical constants: Temperature [T], Pressure [Pa], and Acentric factor [-]
+611.72
+2704000
+0.5259
+# Number Of Atoms
+9
+# Number Of Groups
+1
+# Alkane-group
+flexible
+# number of atoms
+9
+# atomic positions
+0	CH3_1
+1	CH2_1
+2	CPos
+3	OEOpt
+4	CH2_2
+5	CH2_3
+6	CH2_4
+7	CH2_5
+8	CH3_2
+# Chiral centers Bond  BondDipoles Bend  UrayBradley InvBend  Torsion Imp. Torsion Bond/Bond Stretch/Bend Bend/Bend Stretch/Torsion Bend/Torsion IntraVDW IntraCoulomb
+0 8 0 8 0 0 5 1 0 0 0 0 0 13 13
+# Bond stretch: atom n1-n2, type, parameters
+0 1	HARMONIC_BOND	228545.755754	1.540000
+1 2	HARMONIC_BOND	301814.641275	1.520000
+2 3	HARMONIC_BOND	604187.323923	1.230000
+2 4	HARMONIC_BOND	301814.641275	1.520000
+4 5	HARMONIC_BOND	402663.442267	1.530000
+5 6	HARMONIC_BOND	402663.442267	1.530000
+6 7	HARMONIC_BOND	402663.442267	1.530000
+7 8	HARMONIC_BOND	402663.442267	1.530000
+# Bond bending: atom n1-n2-n3, type, parameters
+0 1 2	HARMONIC_COSINE_BEND	63744.348173	111.00
+1 2 3	HARMONIC_COSINE_BEND	67352.518824	120.00
+1 2 4	HARMONIC_COSINE_BEND	67352.518824	120.00
+3 2 4	HARMONIC_COSINE_BEND	82386.563204	121.00
+2 4 5	HARMONIC_COSINE_BEND	63744.348173	111.00
+4 5 6	HARMONIC_COSINE_BEND	63744.348173	111.00
+5 6 7	HARMONIC_COSINE_BEND	63744.348173	111.00
+6 7 8	HARMONIC_COSINE_BEND	63744.348173	111.00
+# Torsion: n1-n2-n3-n4, type, parameters
+0 1 2 4	CVFF_DIHEDRAL	120.272355	6	180.00
+2 4 5 6	CVFF_DIHEDRAL	712.012342	3	0.00
+3 2 4 5	CVFF_DIHEDRAL	120.272355	6	180.00
+4 5 6 7	CVFF_DIHEDRAL	712.012342	3	0.00
+5 6 7 8	CVFF_DIHEDRAL	712.012342	3	0.00
+# Improper: n1-n2-n3-n4, type, parameters
+2 1 3 4	HARMONIC_IMPROPER_DIHEDRAL	20128.781340	0.00
+# Intra VDW: atom n1-n2
+0 5
+0 6
+0 7
+0 8
+1 6
+1 7
+1 8
+2 7
+2 8
+3 6
+3 7
+3 8
+4 8
+# Intra Coulombic: atom n1-n2
+0 5
+0 6
+0 7
+0 8
+1 6
+1 7
+1 8
+2 7
+2 8
+3 6
+3 7
+3 8
+4 8
+# Number of config moves
+8
+# nr fixed, list
+1 0 
+2 0 1 
+1 3 
+1 8 
+2 8 7 
+3 8 7 6 
+4 8 7 6 5 
+5 8 7 6 5 4 

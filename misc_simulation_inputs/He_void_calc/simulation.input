@@ -1,0 +1,19 @@
+SimulationType MonteCarlo
+NumberOfCycles 10000
+PrintEvery 1000
+
+Forcefield GenericMOFs
+UseChargesFromCIFFile yes
+CutOffVDW 10
+ChargeMethod Ewald
+
+Framework 0
+FrameworkName MIL68In
+UnitCells 1 1 3
+ExternalTemperature 298.0
+
+Component 0 MoleculeName helium
+            MoleculeDefinition            local
+            WidomProbability 1.0
+            CreateNumberOfMolecules 0
+

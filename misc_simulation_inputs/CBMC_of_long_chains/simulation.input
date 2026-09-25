@@ -1,0 +1,25 @@
+SimulationType                MonteCarlo
+NumberOfCycles                200000
+NumberOfInitializationCycles  200000
+PrintEvery                    10000
+PrintPropertiesEvery          10000
+Forcefield                    local
+ChargeMethod                  Ewald
+EwaldPrecision                1e-6
+CutOffVDW                     10
+
+Framework 0 
+            FrameworkName                 MIL68In
+            RemoveAtomNumberCodeFromLabel no
+            UseChargesFromCifFile         yes 
+            UnitCells                     1 1 3
+            ExternalTemperature           298.0
+
+Component 0 MoleculeName                  3-octanone
+            MoleculeDefinition            local
+            IdealRosenbluthValue          0.0100741 
+            WidomProbability              1.0
+	    CBMCProbability               1.0
+	    CFSwapLambdaProbability       1.0
+            CreateNumberOfMolecules       0
+

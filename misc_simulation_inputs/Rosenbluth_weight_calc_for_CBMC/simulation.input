@@ -1,0 +1,16 @@
+SimulationType        MonteCarlo
+NumberOfCycles        25000
+PrintEvery            1000
+PrintPropertiesEvery  1000
+
+Forcefield            local
+
+Box 0
+BoxLengths 30 30 30
+ExternalTemperature 298.0
+ 
+Component 0 MoleculeName              isobutyl_acetate
+            MoleculeDefinition        local
+            WidomProbability          1.0
+            CreateNumberOfMolecules   0
+
