@@ -10,6 +10,7 @@ import ami.abc.scheduler_factory
 import ami.abc.worker_factory
 from ami.abc import Index
 
+import traceback
 
 @dataclass(slots=True)
 class RunnerContextHelper:
@@ -55,6 +56,7 @@ class RunnerContextHelper:
             res = future.result()
             value = Some(res) if res is not None else Nothing
         except Exception:
+            traceback.print_exc()
             value = Nothing
 
         self.pool.release(future)
